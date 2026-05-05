@@ -28,9 +28,10 @@ app.use(errorHandler);
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log("CONNECTED SUCCESSFULLY! ON PORT 3000");
+    console.log(`CONNECTED SUCCESSFULLY! ON ${port} `);
 });
 
+module.exports = app;
 
 
 
