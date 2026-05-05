@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basicStyling.css">
+    <link rel="stylesheet" href="/user/login.css">
+    <title>Sign Up/Login</title>
+</head>
+
+<body>
+    <h1>Login Form</h1>
+
+    <form action="/users/login" method="POST">
+        <div> <label for="email-id">Email ID</label>
+            <input type="text" name="emailId" id="email-id" placeholder="Enter Email" required>
+        </div>
+        <div> <label for="password">Password</label>
+            <input type="password" id="password" name="userPassword" placeholder="Enter Password" required>
+        </div>
+        <button>Submit</button>
+    </form>
+
+    <% if(message) { %>
+        <p class="error-message">
+            <%=message%>
+        </p>
+        <% } %>
+
+            <p>Not A User? <a href=" /users/signup">Sign Up!</a></p>
+
+</body>
+
+</html>

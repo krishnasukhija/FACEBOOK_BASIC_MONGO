@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basicStyling.css">
+    <link rel="stylesheet" href="/user/signup.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h1>Sign Up Form</h1>
+    <form action="/users/signup" method="POST">
+        <div><span> <label for="first-name">First Name</label></span>
+            <input type="text" id="first-name" name="firstName">
+        </div>
+        <div> <span><label for="last-name">Last Name</label></span>
+            <input type="text" id="last-name" name="secondName">
+        </div>
+        <div><span> <label for="email">Email ID</label></span>
+            <input type="email" id="email" name="emailId">
+        </div>
+        <div><span> <label for="password">Password</label></span>
+            <input type="password" id="password" name="userPassword">
+        </div>
+        <button>Register</button>
+    </form>
+
+    <p class="error-message">
+        <%= message?message:'' %>
+    </p>
+
+    <p>Already a User? <a href="/users/login">Login</a></p>
+</body>
+
+</html>

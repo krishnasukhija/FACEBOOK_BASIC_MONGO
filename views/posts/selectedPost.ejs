@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basicStyling.css">
+    <link rel="stylesheet" href="/post/selectedPost.css">
+    <title>Selected Post</title>
+</head>
+
+<body>
+    <h1>Selected Post</h1>
+    <% if(user && post) { %>
+        <p>
+            <span class="textContent">
+                <%= post?post.comment:'' %>
+            </span>
+        <blockquote>
+            <span> created by: <strong>
+                    <%= user?user.fullName:'' %>
+                </strong>
+            </span>
+            <br>
+            <span>created on: <%= post.updatedOn%></span>
+        </blockquote>
+        </p>
+        <% } %>
+
+            <p class="error-message">
+                <%= message?message:''%>
+            </p>
+            <a href="/posts">All Posts</a>
+</body>
+
+</html>

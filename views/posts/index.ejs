@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/basicStyling.css">
+    <link rel="stylesheet" href="/post/indexStyle.css">
+
+    <title>All Posts</title>
+</head>
+
+<body>
+    <h1>All Posts</h1>
+    <% if(posts.length===0 && message===null) { %>
+        <p style="margin-left: 15px;">
+            No Posts Available,
+            <a href="/posts/newpost">
+                Create New Posts!
+            </a>
+        </p>
+        <% } %>
+            <ul>
+                <% for(let post of posts){ %>
+                    <li>
+                        <a href="/posts/<%=post._id%>">
+                            <%= post.comment %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+
+            <p style="margin-left: 15px;" class="error-message">
+                <%= message?message:'' %>
+            </p>
+            <div class="homepageDiv"> <a class="homePage" href="/users/user-homepage">Homepage</a></div>
+</body>
+
+</html>

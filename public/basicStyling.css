@@ -1,0 +1,30 @@
+body,
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-family: 'Courier New', Courier, monospace; */
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    /* margin-left: 0px; */
+    margin-top: 0px;
+    background-color: blueviolet;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.error-message {
+    color: rgba(255, 0, 0, 0.7);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
