@@ -10,7 +10,6 @@ const postRouter = require('./routes/post');
 const errorHandler = require('./middleware/errorMiddleware');
 
 
-connectDB();
 
 mongoose.connection.on('connected', () => {
     console.log("Mongoose connected");
@@ -19,6 +18,9 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', () => {
     console.log(error)
 });
+
+connectDB();
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
