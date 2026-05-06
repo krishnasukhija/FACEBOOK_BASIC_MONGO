@@ -3,13 +3,13 @@ require('dotenv').config();
 
 const connectDB = async function () {
     try {
-        const conn = await mongoose.connect(`${process.env.MONGODB_URI}`);
+        const conn = await mongoose.connect(process.env.MONGODB_URI);
         // console.log(conn);
         console.log('Succefully connected to MONGODB');
     }
     catch (error) {
         console.log(error);
-        process.exit(1);
+        // process.exit(1);
     }
 }
 
