@@ -1,29 +1,75 @@
-form {
+body {
+    background-color: rgb(22, 93, 98);
+}
+
+.main-container {
+    /* background-color: white; */
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 250px;
+    background: #edc5c5;
+    background: linear-gradient(161deg, rgba(237, 197, 197, 1) 0%, rgba(29, 24, 69, 1) 0%, rgba(89, 87, 92, 1) 74%, rgba(123, 125, 135, 1) 88%, rgba(129, 132, 143, 1) 100%, rgba(255, 255, 255, 1) 100%);
+    /* background: linear-gradient(161deg, rgb(20, 19, 19) 0%, rgba(29, 24, 69, 1) 0%, rgb(3, 1, 10) 56%, rgb(181, 142, 255) 65%, rgba(129, 132, 143, 1) 100%, rgba(255, 255, 255, 1) 100%); */
+
+    padding-top: 10px;
+}
+
+form {
+    /* border-radius: 10px; */
     height: 180px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 380px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-form :nth-child(1) {
-    margin-top: 20px;
+form div span {
+    display: block;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    /* text-align: left; */
+}
+
+form span input {
+    /* height: 30px; */
+    padding-left: 10px;
+    color: rgb(0, 150, 161);
+    background-color: rgba(0, 0, 0, 0.336);
+    width: 280px;
+    height: 28px;
+}
+
+.label-span {
+    font-weight: 600;
+    padding-left: 10px;
+    text-align: left;
 }
 
 form label {
-    color: brown;
+    /* color: brown; */
+    color: rgb(0, 142, 152);
+
 }
 
 form input {
-    height: 20px;
+    outline: none;
+    /* height: 20px; */
     /* width: 30px; */
     border-radius: 10px;
     border: 1px rgb(34, 208, 248) solid;
-
 }
 
+
+form div input:hover,
+form div input:focus {
+    border-color: #8bcafd;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+
+}
 
 form label,
 form input,
@@ -42,7 +88,7 @@ p {
     text-align: center;
 }
 
-form button {
+/* form button {
     font-size: 15px;
     margin-top: 18px;
     color: antiquewhite;
@@ -51,4 +97,26 @@ form button {
     height: 25px;
     border-radius: 8px;
     width: 80px;
+} */
+
+form button {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.527);
+    background-color: rgb(76, 41, 71);
+    border: none;
+    height: 32px;
+    border-radius: 8px;
+    width: 115px;
+}
+
+form button:hover,
+form button:active {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0.491);
+}
+
+.last-span {
+    color: #413030;
 }

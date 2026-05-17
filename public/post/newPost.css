@@ -3,25 +3,61 @@ body {
 }
 
 form {
-
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 450px; */
     margin-left: 10px;
     font-size: 18px;
 }
 
 
 form textarea {
-    display: inline-block;
-    max-width: 400px;
-    max-height: 100px;
+    /* padding-top: 10px;
+    padding-left: 10px; */
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 450px;
+    height: 150px;
     min-height: 50px;
     min-width: 200px;
     margin-bottom: 0px;
 }
 
 form button {
+    /* outline: none; */
+    border: none;
+    background-color: darkgray;
     display: inline-block;
     padding-bottom: 0px;
 }
+
+.div-btn {
+    position: relative;
+    top: 10px;
+    left: 32%;
+    /* background-color: black; */
+}
+
+.div-btn button {
+    background-color: rgb(61, 73, 79);
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.502);
+    cursor: pointer;
+    font-size: 15px;
+    font-size: 700;
+}
+
+.div-btn button:hover {
+    color: white;
+    text-shadow: 0px 0px 11px rgba(159, 159, 159, 0.65);
+}
+
+
+
 
 form textarea,
 form button {
@@ -33,7 +69,59 @@ form button {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
     position: fixed;
-    top: 35vh;
-    left: 9px;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, 0);
     font-size: 18px;
+}
+
+.homepagePara a {
+    color: rgb(66, 191, 170);
+    font-weight: 600;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.homepagePara a:hover {
+    color: white;
+    text-shadow: 0px 0px 11px rgba(159, 159, 159, 0.65);
+}
+
+textarea {
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.347);
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar {
+    /* display: none; */
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    /* border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.142); */
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    /* display: none; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-radius: 20px;
+    /* border-radius: 100vw; */
+    /* display: none; */
+    /* background: hsl(120, 100%, 10% / 1); */
+    background: rgba(0, 0, 0, 0.313);
+    /* width: 5px; */
+    /* background: black; */
+    border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
 }

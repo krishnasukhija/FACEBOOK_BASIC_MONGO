@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     userPassword: {
         type: String,
         required: true
+    },
+    salt: {
+        type: String,
+        required: true
     }
 });
 

@@ -3,6 +3,9 @@ const User = require('../model/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+// const { subtle } = globalThis.crypto;
+const multer = require('multer');
+
 
 // @desc gets Login page
 // @route GET /users/login
@@ -18,6 +21,29 @@ const getSignUpPage = (req, res) => {
     res.render('users/signup', { message: null });
 }
 
+
+// @desc Get Salt from the database
+// @route Get /users/login/salt
+//  @access Private
+const getSalt = async (req, res) => {
+    console.log(req.body);
+    const { emailId } = req.body;
+    if (!emailId) {
+        return res.status(400).json({ error: "User Login Failed" })
+    }
+    const user = await User.findOne({ emailId });
+    if (!user) {
+        return res.status(401).json({ error: "User Unauthorised" });
+    }
+
+    const { salt } = user;
+    if (!salt) {
+        return res.status(500).json({ error: "Server Error" });
+    }
+    return res.status(200).json({ salt: salt });
+}
+
+
 // @desc login user through Form Submission
 // @route POST /users/login
 // @access Private
@@ -30,6 +56,7 @@ const userLogin = async (req, res) => {
     if (!user) {
         return res.status(400).render('users/login', { message: "User Login Failed!" });
     }
+
     try {
         const validPassword = await bcrypt.compare(userPassword, user.userPassword);
         if (!validPassword) {
@@ -38,7 +65,7 @@ const userLogin = async (req, res) => {
         const userPayload = { id: user._id, email: user.emailId };
         const token = await jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '7d' })
         res.cookie('jwt', token, { httpOnly: true, maxAge: 604800000 });
-        res.redirect('/users/user-homepage');
+        res.status(200).redirect('/users/user-homepage');
     }
     catch (err) {
         return res.status(400).render('users/login', { message: "User Login Failed!" });
@@ -49,19 +76,27 @@ const userLogin = async (req, res) => {
 // @route POST /users/signup
 //@access public
 const userSignup = async (req, res) => {
-    console.log(req.body);
-    const { firstName, secondName, emailId, userPassword } = req.body;
-    if (!firstName || !secondName || !emailId || !userPassword) {
-        console.log(secondName);
+    console.log('working')
+    console.log('req.body', req.body);
+    // console.log('req.body.fullName', req.body.firstName);
+    // console.log(req.salt);
+    // console.log(req.files);
+    // console.log(req.fields);
+    // return;
+    const { firstName, secondName, emailId, userPassword, salt } = req.body;
+    if (!firstName || !secondName || !emailId || !userPassword || !salt) {
         return res.status(400).render('users/signup', { message: "Please Enter All Fields!" });
     }
+    console.log(userPassword);
     try {
         const user = await User.findOne({ emailId: emailId });
+        // console.log()
         if (user) {
             return res.status(400).render('users/signup', { message: 'User Already Exists' });
         }
+        console.log('working till here')
         const hashedPassword = await bcrypt.hash(userPassword, 10);
-        const newUser = new User({ firstName, secondName, emailId, userPassword: hashedPassword });
+        const newUser = new User({ firstName, secondName, emailId, userPassword: hashedPassword, salt });
         const response = await newUser.save({ j: true });
         console.log('response', response);
         if (response) {
@@ -96,7 +131,7 @@ const logoutUser = (req, res) => {
     res.redirect('/users/login');
 }
 
-module.exports = { getLoginPage, getSignUpPage, userLogin, userSignup, getUserHomePage, logoutUser }
+module.exports = { getLoginPage, getSignUpPage, userLogin, userSignup, getUserHomePage, logoutUser, getSalt }
 
 
 

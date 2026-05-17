@@ -10,27 +10,37 @@
 </head>
 
 <body>
-    <h1>Selected Post</h1>
-    <% if(user && post) { %>
-        <p>
-            <span class="textContent">
+    <h1 class="h1">Selected Post</h1>
+    <div class="main-container">
+        <% if(user && post) { %>
+            <!-- <p class="row1"> -->
+            <blockquote class="textContent row1">
                 <%= post?post.comment:'' %>
-            </span>
-        <blockquote>
-            <span> created by: <strong>
-                    <%= user?user.fullName:'' %>
-                </strong>
-            </span>
-            <br>
-            <span>created on: <%= post.updatedOn%></span>
-        </blockquote>
-        </p>
-        <% } %>
+            </blockquote>
+            <!-- </p> -->
+            <blockquote class="row2">
+                <span> created by: <strong>
+                        <%= user?user.fullName:'' %>
+                    </strong>
+                </span>
+                <br>
+                <span>created on: <%= post.updatedOn%></span>
+            </blockquote>
+            <% } %>
 
-            <p class="error-message">
-                <%= message?message:''%>
-            </p>
-            <a href="/posts">All Posts</a>
+    </div>
+
+    <p class="error-message">
+        <%= message?message:''%>
+    </p>
+    <div class="last-div">
+        <a href="/posts">All Posts</a>
+    </div>
+
+    <script>
+        const blockquote = document.querySelector('.textContent');
+        blockquote.innerHTML = blockquote.innerText;
+    </script>
 </body>
 
 </html>

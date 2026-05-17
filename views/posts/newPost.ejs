@@ -10,15 +10,17 @@
 </head>
 
 <body>
-    <h1>Create New Post</h1>
-    <form action="/posts/newpost" METHOD="POST">
-        <textarea type="text" placeholder="Enter Your Comment Here" name="comment" required></textarea>
-        <button>Submit</button>
+    <h1 class="h1">Create New Post</h1>
+    <form class="new-post-form" action="/posts/newpost" METHOD="POST">
+        <textarea class="textarea" type="text" placeholder="Enter Your Comment Here" name="comment" required></textarea>
+        <div class="div-btn"><button>Submit</button></div>
     </form>
     <p style="margin-left: 12px;" class="error-message">
         <%= message?message:'' %>
     </p>
     <p class="homepagePara"> <a href="/users/user-homepage">Homepage</a></p>
+
+    <script src="/post/newPost.js"></script>
 </body>
 
 </html>

@@ -12,3 +12,31 @@ body div {
     padding-left: 10px;
     text-align: left;
 } */
+
+.main-container {
+    border-radius: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.313);
+    width: 55%;
+    margin: auto;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.main-container div {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.main-container div a {
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: rgb(85, 103, 116);
+}
+
+.main-container div a:hover {
+    color: rgb(244, 194, 194);
+    text-shadow: 0px 0px 11px rgba(159, 159, 159, 0.65);
+}

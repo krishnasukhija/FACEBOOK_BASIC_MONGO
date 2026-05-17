@@ -11,29 +11,47 @@
 </head>
 
 <body>
-    <h1>All Posts</h1>
-    <% if(posts.length===0 && message===null) { %>
-        <p style="margin-left: 15px;">
-            No Posts Available,
-            <a href="/posts/newpost">
-                Create New Posts!
-            </a>
-        </p>
-        <% } %>
-            <ul>
-                <% for(let post of posts){ %>
-                    <li>
-                        <a href="/posts/<%=post._id%>">
-                            <%= post.comment %>
-                        </a>
-                    </li>
-                    <% } %>
-            </ul>
 
-            <p style="margin-left: 15px;" class="error-message">
-                <%= message?message:'' %>
+    <h1 class="h1">All Posts</h1>
+
+    <div class="main-container">
+        <% if(posts.length===0 && message===null) { %>
+            <p class="nopost-message" style="margin-left: 15px;">
+                No Posts Available,
+                <a href="/posts/newpost">
+                    Create New Posts!
+                </a>
             </p>
-            <div class="homepageDiv"> <a class="homePage" href="/users/user-homepage">Homepage</a></div>
+            <% } %>
+                <!-- <ul> -->
+                <% for(let post of posts){ %>
+                    <!-- <li> -->
+                    <blockquote class="post-para">
+                        <div class="comment-span">
+                            <%= post.comment %>
+                        </div>
+                        <sup><a class="a" href="/posts/<%=post._id%>">Info</a></sup>
+                    </blockquote>
+                    <div class="line"></div>
+                    <!-- </li> -->
+                    <% } %>
+                        <!-- </ul> -->
+
+                        <p style="margin-left: 15px;" class="error-message">
+                            <%= message?message:'' %>
+                        </p>
+    </div>
+    <div class="homepageDiv"> <a class="homePage" href="/users/user-homepage">Homepage</a></div>
+
+    <script>
+        const commentDivs = document.querySelectorAll('.comment-span');
+
+        commentDivs.forEach(div => {
+            const innerText = div.innerText;
+            console.log(innerText);
+            div.innerHTML = innerText;
+        })
+    </script>
 </body>
 
 </html>

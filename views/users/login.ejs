@@ -10,26 +10,32 @@
 </head>
 
 <body>
-    <h1>Login Form</h1>
+    <h1 class="h1">Login Form</h1>
+    <div class="main-container">
+        <form class="login-form" action="/users/login" method="POST">
+            <div> <span class="label-span"> <label for="email-id">Email ID</label></span>
+                <span> <input type="text" name="emailId" id="email-id" placeholder="Enter Email" required></span>
+            </div>
+            <div>
+                <span class="label-span"><label for="password">Password</label></span>
+                <span> <input type="password" id="password" name="userPassword" placeholder="Enter Password"
+                        required></span>
+            </div>
+            <button>Submit</button>
+        </form>
 
-    <form action="/users/login" method="POST">
-        <div> <label for="email-id">Email ID</label>
-            <input type="text" name="emailId" id="email-id" placeholder="Enter Email" required>
-        </div>
-        <div> <label for="password">Password</label>
-            <input type="password" id="password" name="userPassword" placeholder="Enter Password" required>
-        </div>
-        <button>Submit</button>
-    </form>
 
-    <% if(message) { %>
+        <!-- if(message) {  -->
         <p class="error-message">
-            <%=message%>
+            <%=message?message:''%>
         </p>
-        <% } %>
+        <!-- }  -->
 
-            <p>Not A User? <a href=" /users/signup">Sign Up!</a></p>
+        <p> <span class="last-span">Not A User? </span> <a href=" /users/signup">Sign Up!</a></p>
 
+    </div>
+
+    <script src="/user/login.js"></script>
 </body>
 
 </html>

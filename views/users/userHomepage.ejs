@@ -11,12 +11,15 @@
 </head>
 
 <body>
-    <h1>Welcome <%= user.fullName %>,
+    <h1 class="h1">Welcome <%= user.fullName %>,
     </h1>
     <!-- <%= user._id %> -->
-    <div><a href="/posts"> View All Posts</a></div>
-    <div><a href="/posts/newpost">Create New Post</a></div>
-    <div> <a href="/users/logout">Logout </a></div>
+
+    <div class="main-container">
+        <div><a href="/posts"> View All Posts</a></div>
+        <div><a href="/posts/newpost">Create New Post</a></div>
+        <div> <a href="/users/logout">Logout </a></div>
+    </div>
 </body>
 
 </html>
