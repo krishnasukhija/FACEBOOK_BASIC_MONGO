@@ -6,6 +6,9 @@ const User = require('../model/userModel.js');
 const byrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const formidableMiddleware = require('express-formidable');
+const cors = require('cors');
+
+router.use(cors());
 // app.use(formidableMiddleware());
 
 // const formDataParser = () => {
