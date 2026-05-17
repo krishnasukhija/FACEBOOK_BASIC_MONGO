@@ -70,7 +70,12 @@ signupform.addEventListener('submit', async (e) => {
     // }
     // console.log(data);
     // return;
-    const url = new URL("http://localhost:3000/users/signup")
+
+    // Local signup URL
+    // const url = new URL("http://localhost:3000/users/signup");
+
+    // Vercel signup URL
+    const url = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/signup")
     fetch(url, {
         method: 'POST',
         body: data

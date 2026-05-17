@@ -15,7 +15,11 @@ loginForm.addEventListener('submit', async (e) => {
     }
 
     // Post salt route
-    const url = new URL("http://localhost:3000/users/login/salt");
+    // localhost URL
+    // const url = new URL("http://localhost:3000/users/login/salt");
+
+    const url = new URL('https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/login/salt')
+
     const data = new URLSearchParams();
     data.append('emailId', emailId);
 
@@ -70,7 +74,12 @@ loginForm.addEventListener('submit', async (e) => {
     // return;
     // POST /users/Login Route
     data.append('userPassword', exportKey.k);
-    const loginURL = new URL("http://localhost:3000/users/login");
+
+    // local login URL
+    // const loginURL = new URL("http://localhost:3000/users/login");
+
+    // Vercel login URL
+    const loginURL = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/login")
     const response2 = await fetch(loginURL,
         {
             method: 'POST',
