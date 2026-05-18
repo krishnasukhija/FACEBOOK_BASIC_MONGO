@@ -7,7 +7,7 @@ const byrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const formidableMiddleware = require('express-formidable');
 
-router.use(cors());
+// router.use(cors());
 // app.use(formidableMiddleware());
 
 // const formDataParser = () => {
