@@ -9,7 +9,11 @@ const userRouter = require('./routes/user');
 const postRouter = require('./routes/post');
 const errorHandler = require('./middleware/errorMiddleware');
 const cors = require('cors');
-
+const corsOptions = {
+    origin: '*',
+    credentials: true, //access-control-allow-credentials: true
+    optionSuccessStatus: 200
+}
 
 
 
@@ -23,7 +27,7 @@ mongoose.connection.on('error', (error) => {
 
 connectDB();
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
