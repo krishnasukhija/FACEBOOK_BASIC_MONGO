@@ -10,7 +10,7 @@ const postRouter = require('./routes/post');
 const errorHandler = require('./middleware/errorMiddleware');
 const cors = require('cors');
 const corsOptions = {
-    origin: '*',
+    origin: 'https://facebook-basic-mongo-cn7e31v68-krishnasukhijas-projects.vercel.app',
     credentials: true, //access-control-allow-credentials: true
     optionSuccessStatus: 200
 }
