@@ -1,7 +1,7 @@
 // const CryptoJS = require('crypto-js');
 
 // const { sign } = require("jsonwebtoken");
-console.log(window.location.href);
+// console.log(window.location.href);
 
 const signupform = document.querySelector('#signupform');
 const firstnameInp = document.querySelector('#first-name');
@@ -75,7 +75,7 @@ signupform.addEventListener('submit', async (e) => {
     // const url = new URL("http://localhost:3000/users/signup");
 
     // Vercel signup URL
-    const url = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/signup")
+    const url = new URL(`${window.location.href}`);
     fetch(url, {
         method: 'POST',
         body: data,
