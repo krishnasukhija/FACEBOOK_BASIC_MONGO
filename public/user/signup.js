@@ -78,7 +78,8 @@ signupform.addEventListener('submit', async (e) => {
     const url = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/signup")
     fetch(url, {
         method: 'POST',
-        body: data
+        body: data,
+        credentials: 'include'
     }).then(data => {
         console.log('signup-response', data);
         if (data.ok) {
