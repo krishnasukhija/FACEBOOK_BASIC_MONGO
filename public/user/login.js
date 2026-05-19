@@ -18,7 +18,7 @@ loginForm.addEventListener('submit', async (e) => {
     // localhost URL
     // const url = new URL("http://localhost:3000/users/login/salt");
 
-    const url = new URL('https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/login/salt')
+    const url = new URL(`${window.location.href}`);
 
     const data = new URLSearchParams();
     data.append('emailId', emailId);
