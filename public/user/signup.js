@@ -1,7 +1,6 @@
 // const CryptoJS = require('crypto-js');
 
 // const { sign } = require("jsonwebtoken");
-// console.log(window.location.href);
 
 const signupform = document.querySelector('#signupform');
 const firstnameInp = document.querySelector('#first-name');
@@ -12,6 +11,7 @@ const errorMessage = document.querySelector('.error-message');
 
 signupform.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log(window.location.href);
 
     // Turning password into Bytes
     const password = passwordInp.value;
