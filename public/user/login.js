@@ -18,7 +18,7 @@ loginForm.addEventListener('submit', async (e) => {
     // localhost URL
     // const url = new URL("http://localhost:3000/users/login/salt");
 
-    const url = new URL(`${window.location.href}`);
+    const url = new URL(`${window.location.href}/salt`);
 
     const data = new URLSearchParams();
     data.append('emailId', emailId);
@@ -79,7 +79,8 @@ loginForm.addEventListener('submit', async (e) => {
     // const loginURL = new URL("http://localhost:3000/users/login");
 
     // Vercel login URL
-    const loginURL = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/login")
+    // const loginURL = new URL("https://facebook-basic-mongo-ml9hrk86l-krishnasukhijas-projects.vercel.app/users/login")
+    const loginURL = new URL(`${window.location.href}`)
     const response2 = await fetch(loginURL,
         {
             method: 'POST',
